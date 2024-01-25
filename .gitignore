@@ -1,1 +1,4 @@
 llm-env/
+__pycache__/
+models/
+output/
