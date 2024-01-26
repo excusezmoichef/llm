@@ -1,15 +1,14 @@
 from dataclasses import dataclass
 from diffusers import StableDiffusionPipeline
 import torch
-from PIL import Image, ImageTk
 
 @dataclass
 class TextToImageOptions:
     prompt: str
     model: str
     num_inference_steps: int = 50
-    width: int = 256
-    height: int = 256
+    width: int = 512
+    height: int = 512
     output: str = "output"
 
 def run(options: TextToImageOptions):
