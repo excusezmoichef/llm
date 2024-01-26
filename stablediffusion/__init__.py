@@ -13,7 +13,7 @@ class TextToImageOptions:
     output: str = "output"
 
 def run(options: TextToImageOptions):
-    pipe = StableDiffusionPipeline.from_pretrained(options.model, torch_dtype=torch.float16)
+    pipe = StableDiffusionPipeline.from_pretrained(options.model, torch_dtype=torch.float16, safety_checker=None)
     pipe = pipe.to("cuda")
 
     image = pipe(options.prompt, num_inference_steps=options.num_inference_steps, width=options.width, height=options.height).images[0]
