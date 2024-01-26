@@ -31,12 +31,13 @@ def run():
     run_button.configure(text="En cours...", state="disabled")
 
     prompt = textbox.get("0.0", "end").strip()
-    print(prompt)
 
-    llama.run(prompt)
+    llama_result = llama.run(prompt, "models/" + settings["text_model"], max_tokens=settings["max_tokens"])
+
+    print("\nprompt: " + prompt + "\nresult: " + llama_result + "\n")
 
     output = time.time()
-    img = sd.run(sd.TextToImageOptions(prompt=prompt, model="models/" + settings["imageModel"], output=time.time(), num_inference_steps=100))
+    img = sd.run(sd.TextToImageOptions(prompt=prompt + llama_result, model="models/" + settings["image_model"], output=time.time(), num_inference_steps=100))
 
     data = {}
     if os.path.isfile('output/history.json'):
