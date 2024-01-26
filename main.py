@@ -1,2 +1,7 @@
-import llama2_py
-llama2_py.run({"checkpoint": "stories15M.bin", "temperature": 0.0, "steps": 256, "prompt": "A story about an elf and a dwarf."})
+import os
+import ui.windows.main_window as main_window
+
+if not os.path.isdir("output"):
+    os.mkdir("output")
+
+main_window.show()
