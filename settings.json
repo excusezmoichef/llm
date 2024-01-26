@@ -1,0 +1,5 @@
+{
+    "textModel": "stable-diffusion-2-1",
+    "imageModel": "stable-diffusion-2-1",
+    "steps": 100
+}
