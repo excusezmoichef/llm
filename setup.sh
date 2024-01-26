@@ -2,7 +2,7 @@
 
 echo "Projet LLM"
 echo "------Membres------"
-echo -e "Djelal BOUDJI\nVincent PETT\nLéo NIEDERBERGER-VIALLE\nTristan DURIEUX\nEdouard RINALDI"
+echo -e "Djelal BOUDJI\nVincent PETT\nTristan DURIEUX\nEdouard RINALDI"
 echo "-------------------"
 
 # Clean de l'environnement virtuel python
